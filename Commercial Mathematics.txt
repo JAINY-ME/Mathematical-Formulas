@@ -1,0 +1,8 @@
+मूलधन = Principal (P)
+मिश्रधन = Amount (A)
+ब्याज = Interest (I)
+दर = Rate of Interest per annum (R)
+समय = Time period in years (T)
+साधारण ब्याज = Simple Interest (SI)
+चक्रवृद्धि ब्याज = compound Interest (CI)
+

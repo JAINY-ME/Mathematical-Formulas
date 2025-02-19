@@ -1,0 +1,104 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main() {
+    // Write C code here
+    int choice, th;
+    float radius, Radius, result, chord;
+    const float PI = 3.14;
+    
+    printf("Calculation in a Circle\n");
+    
+    while(1){
+        printf("\n\n-----choose what to calculate-----\n");
+        printf("\n0. Exit.");
+        printf("\n1. Circumference of a Circle.");
+        printf("\n2. Area of a Circle.");
+        printf("\n3. Area of an Annulus.");
+        printf("\n4. Area of a Semicircle.");
+        printf("\n5. Circumference of a Semicircle.");
+        printf("\n6. Area of a Sector.");
+        printf("\n7. Circumference of a Sector.");
+        printf("\n8. Area of a Segment.");
+        printf("\n9. Circumference of a Segment.\n");
+        printf("Enter Your Choice ( 0/ 1/ 2/ 3/ 4/ 5/ 6/ 7/ 8/ 9 ) : ");
+        scanf("%d", &choice);
+        
+        switch(choice){
+            case 0: 
+                exit(0);
+                break;
+            case 1: 
+                printf("Enter the radius of a circle: ");
+                scanf("%f", &radius);
+                result = 2 * PI * radius;
+                printf("The Circumference of a circle is: %.2f\n", result);
+                break;
+            case 2: 
+                printf("Enter the radius of a circle: ");
+                scanf("%f", &radius);
+                result = PI * pow(radius, 2);
+                printf("The Area of a circle is: %.2f\n", result);
+                break;
+            case 3: 
+                printf("Enter Radius of the smaller circle: ");
+                scanf("%f", &radius);
+                printf("Enter Radius of the larger circle: ");
+                scanf("%f", &Radius);
+                result = PI * (pow(Radius, 2) - pow(radius, 2));
+                printf("The Area of an Annulus is: %.2f\n", result);
+                break;
+            case 4: 
+                printf("Enter the radius of a circle: ");
+                scanf("%f", &radius);
+                result = (PI * pow(radius, 2)) / 2;
+                printf("The Area of a Semicircle is: %.2f\n", result);
+                break;
+            case 5: 
+                printf("Enter the radius of a circle: ");
+                scanf("%f", &radius);
+                result = (PI + 2) * radius;
+                printf("The Circumference of a Semicircle is: %.2f\n", result);
+                break;
+            case 6: 
+                printf("Enter the radius of a circle: ");
+                scanf("%f", &radius);
+                printf("Enter the value of θ (in degrees): ");
+                scanf("%d", &th);
+                result = ((float)th / 360) * PI * pow(radius, 2);
+                printf("The Area of a Sector is: %.2f\n", result);
+                break;
+            case 7: 
+                printf("Enter the radius of a circle: ");
+                scanf("%f", &radius);
+                printf("Enter the value of θ (in degrees): ");
+                scanf("%d", &th);
+                result = (2 * radius) + ((PI * radius * th) / 180);
+                printf("The Circumference of a Sector is: %.2f\n", result);
+                break;
+            case 8: 
+                printf("Enter the radius of a circle: ");
+                scanf("%f", &radius);
+                printf("Enter the value of θ (in degrees): ");
+                scanf("%d", &th);
+                result = pow(radius, 2) * ((PI * th / 360) - (sin(th * PI / 180) / 2));
+                printf("The Area of a Segment is: %.2f\n", result);
+                break;
+            case 9: 
+                printf("Enter the radius of a circle: ");
+                scanf("%f", &radius);
+                printf("Enter the value of θ (in degrees): ");
+                scanf("%d", &th);
+                printf("Enter the Chord length: ");
+                scanf("%f", &chord);
+                result = chord + ((PI * radius * th) / 180);
+                printf("The Circumference of a Segment is: %.2f\n", result);
+                break;
+            default: 
+                printf("Invalid choice! Please enter 0, 1, 2, 3, 4, 5, 6, 7, 8, or 9.\n");
+                continue;
+        }
+    }
+}
